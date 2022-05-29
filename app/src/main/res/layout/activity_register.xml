@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".Register_Activity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,20 +24,48 @@
             android:paddingBottom="32pt">
 
             <TextView
-                android:id="@+id/activity_login_tv_title_login"
+                android:id="@+id/activity_register_tv_title_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16pt"
-                android:text="Login"
+                android:text="Registro"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16pt" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_register_til_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8pt">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_register_til_apellido"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8pt">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Apellido"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="8pt"
-                android:id="@+id/activity_login_til_email">
+                android:id="@+id/activity_register_til_email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -48,10 +76,10 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_register_til_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="16pt"
-                android:id="@+id/activity_login_til_password"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -63,17 +91,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/activity_login_btn_login"
+                android:id="@+id/activity_register_btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8pt"
-                android:text="Iniciar sesión" />
+                android:text="Registrar" />
 
             <TextView
-                android:id="@+id/activity_login_tv_register"
+                android:id="@+id/activity_register_tv_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Registrar"
+                android:text="Iniciar sesión"
                 android:textAlignment="center" />
 
         </LinearLayout>

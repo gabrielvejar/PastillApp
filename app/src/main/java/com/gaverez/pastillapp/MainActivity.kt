@@ -17,9 +17,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+
         val btnToRegister = findViewById<Button>(R.id.activity_main_btn_signin)
         btnToRegister.setOnClickListener{
-            Toast.makeText(this, "Registrar", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Registrar", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, Register_Activity::class.java)
+            startActivity(intent)
         }
     }
 }
