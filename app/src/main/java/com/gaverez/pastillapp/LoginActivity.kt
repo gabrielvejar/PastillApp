@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
         val tvToRegister = findViewById<TextView>(R.id.activity_login_tv_register)
         tvToRegister.setOnClickListener{
             //Toast.makeText(this, "Registrar", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, Register_Activity::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
             finish()
