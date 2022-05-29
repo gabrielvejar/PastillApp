@@ -31,7 +31,8 @@
                 android:text="Detalles de alarma"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textSize="16pt" />
+                android:textSize="16pt"
+                />
 
             <TextView
                 android:id="@+id/activity_details_tv_med_name_label"
@@ -40,11 +41,54 @@
                 android:text="Nombre" />
 
             <TextView
-                android:id="@+id/activity_details_tv_med_name"
+                android:id="@+id/activity_details_tv_med_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Amoxicilina"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginBottom="8pt"/>
+
+            <TextView
+                android:id="@+id/activity_details_tv_med_start_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inicio del tratamiento" />
+
+            <TextView
+                android:id="@+id/activity_details_tv_med_repeat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="12/05/2022 a las 18:30"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginBottom="8pt"/>
+
+            <TextView
+                android:id="@+id/activity_details_tv_med_repeat_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Repetir cada" />
+
+            <TextView
+                android:id="@+id/activity_details_tv_med_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4 Horas"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginBottom="8pt"/>
+
+            <TextView
+                android:id="@+id/activity_details_tv_med_note_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nota" />
+
+            <TextView
+                android:id="@+id/activity_details_tv_med_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Antibiotico para la infección del oído."
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:layout_marginBottom="8pt"/>
 
             <Button
                 android:id="@+id/activity_details_btn_edit"
