@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MedicamentEditActivity">
+    tools:context=".NewMedicamentActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,17 +24,17 @@
             android:paddingBottom="32pt">
 
             <TextView
-                android:id="@+id/activity_edit_tv_title_edit"
+                android:id="@+id/activity_new_med_tv_title_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16pt"
-                android:text="Editar detalles de medicamento"
+                android:text="Agregar nuevo medicamento"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16pt" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/activity_edit_til_name"
+                android:id="@+id/activity_new_med_til_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="8pt">
@@ -48,18 +48,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/activity_edit_btn_save"
+                android:id="@+id/activity_new_med_btn_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8pt"
-                android:text="Guardar cambios" />
-
-            <Button
-                android:id="@+id/activity_edit_btn_delete"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8pt"
-                android:text="Eliminar medicamento" />
+                android:text="Guardar medicamento" />
 
         </LinearLayout>
     </ScrollView>

@@ -15,5 +15,12 @@ class MedicamentEditActivity : AppCompatActivity() {
             val intent = Intent(this, MedicamentDetailsActivity::class.java)
             startActivity(intent)
         }
+
+        val btnToDeleteMed = findViewById<Button>(R.id.activity_edit_btn_delete)
+        btnToDeleteMed.setOnClickListener{
+            val intent = Intent(this, ListActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

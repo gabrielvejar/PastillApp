@@ -10,11 +10,11 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        //val btnToAddNewMed = findViewById<Button>(R.id.activity_list_btn_add_med)
-        //btnToAddNewMed.setOnClickListener{
-        //    val intent = Intent(this, Register_Activity::class.java)
-        //    startActivity(intent)
-        //}
+        val btnToAddNewMed = findViewById<Button>(R.id.activity_list_btn_add_med)
+        btnToAddNewMed.setOnClickListener{
+            val intent = Intent(this, NewMedicamentActivity::class.java)
+            startActivity(intent)
+        }
 
         val btnToViewMedDetails = findViewById<Button>(R.id.activity_list_btn_med1)
         btnToViewMedDetails.setOnClickListener{

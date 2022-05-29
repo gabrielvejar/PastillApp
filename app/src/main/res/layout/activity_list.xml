@@ -44,19 +44,19 @@
                 android:id="@+id/activity_list_btn_med1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Medicamento 1" />
+                android:text="Amoxicilina" />
 
             <Button
                 android:id="@+id/activity_list_btn_med2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Medicamento 2" />
+                android:text="EcalD" />
 
             <Button
                 android:id="@+id/activity_list_btn_med3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Medicamento 3" />
+                android:text="Paracetamol" />
 
         </LinearLayout>
     </ScrollView>
