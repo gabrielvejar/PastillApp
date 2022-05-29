@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16pt"
+            android:paddingTop="32pt"
+            android:paddingRight="16pt"
+            android:paddingBottom="32pt">
+
+            <TextView
+                android:id="@+id/activity_list_tv_title_meds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16pt"
+                android:text="Medicamentos"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="16pt" />
+
+            <Button
+                android:id="@+id/activity_list_btn_add_med"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Añadir nuevo medicamento"
+                android:layout_marginBottom="16pt"/>
+
+            <Button
+                android:id="@+id/activity_list_btn_med1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Medicamento 1" />
+
+            <Button
+                android:id="@+id/activity_list_btn_med2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Medicamento 2" />
+
+            <Button
+                android:id="@+id/activity_list_btn_med3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Medicamento 3" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/gveja/AndroidStudioProjects/PastillApp/app/src/main/res/layout/activity_list.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gveja/AndroidStudioProjects/PastillApp/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gveja/AndroidStudioProjects/PastillApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/gveja/AndroidStudioProjects/PastillApp/app/src/main/res/layout/activity_medicament_details.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/gveja/AndroidStudioProjects/PastillApp/app/src/main/res/layout/activity_medicament_edit.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gveja/AndroidStudioProjects/PastillApp/app/src/main/res/layout/activity_register.xml" value="0.33" />
       </map>
     </option>
