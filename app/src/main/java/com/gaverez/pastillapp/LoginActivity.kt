@@ -14,14 +14,18 @@ class LoginActivity : AppCompatActivity() {
         val btnToLogin = findViewById<Button>(R.id.activity_login_btn_login)
         btnToLogin.setOnClickListener{
             val intent = Intent(this, ListActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
+            finish()
         }
 
         val tvToRegister = findViewById<TextView>(R.id.activity_login_tv_register)
         tvToRegister.setOnClickListener{
             //Toast.makeText(this, "Registrar", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Register_Activity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
+            finish()
         }
 
     }

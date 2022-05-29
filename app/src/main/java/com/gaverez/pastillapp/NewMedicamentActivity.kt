@@ -13,7 +13,9 @@ class NewMedicamentActivity : AppCompatActivity() {
         val btnToSaveNewMed = findViewById<Button>(R.id.activity_new_med_btn_save)
         btnToSaveNewMed.setOnClickListener{
             val intent = Intent(this, ListActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
+            finish()
         }
 
     }

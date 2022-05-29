@@ -10,11 +10,20 @@ class Register_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        val buttonToRegister = findViewById<TextView>(R.id.activity_register_btn_register)
+        buttonToRegister.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+            finish()
+        }
+
         val tvToLogin = findViewById<TextView>(R.id.activity_register_tv_login)
         tvToLogin.setOnClickListener{
-            //Toast.makeText(this, "Registrar", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
+            finish()
         }
 
     }

@@ -13,13 +13,9 @@ class MedicamentEditActivity : AppCompatActivity() {
         val btnToSaveMedDetailsChanges = findViewById<Button>(R.id.activity_edit_btn_save)
         btnToSaveMedDetailsChanges.setOnClickListener{
             val intent = Intent(this, MedicamentDetailsActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
-        }
-
-        val btnToDeleteMed = findViewById<Button>(R.id.activity_edit_btn_delete)
-        btnToDeleteMed.setOnClickListener{
-            val intent = Intent(this, ListActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
     }

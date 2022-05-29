@@ -28,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16pt"
+                android:backgroundTint="#DD0B0B"
                 android:text="Editar detalles de medicamento"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -54,12 +55,6 @@
                 android:layout_marginBottom="8pt"
                 android:text="Guardar cambios" />
 
-            <Button
-                android:id="@+id/activity_edit_btn_delete"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8pt"
-                android:text="Eliminar medicamento" />
 
         </LinearLayout>
     </ScrollView>
