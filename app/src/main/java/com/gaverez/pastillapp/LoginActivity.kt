@@ -11,6 +11,12 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val btnToLogin = findViewById<Button>(R.id.activity_login_btn_login)
+        btnToLogin.setOnClickListener{
+            val intent = Intent(this, ListActivity::class.java)
+            startActivity(intent)
+        }
+
         val tvToRegister = findViewById<TextView>(R.id.activity_login_tv_register)
         tvToRegister.setOnClickListener{
             //Toast.makeText(this, "Registrar", Toast.LENGTH_SHORT).show()
