@@ -46,6 +46,25 @@ class TilValidator constructor(til: TextInputLayout) {
         return this
     }
 
+    fun time(): TilValidator {
+        if (mustValidate()) {
+            val timePattern = "^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])\$"
+            val timeMatcher = Regex(timePattern)
+
+            val invalidField = timeMatcher.find(this.value) == null
+            this.setError(invalidField, "Hora incorrecta. Ingrese hora con formato HH:mm")
+        }
+        return this
+    }
+
+    fun days(): TilValidator {
+        if (mustValidate()) {
+            val invalidField = this.value == "0"
+            this.setError(invalidField, "Mínimo 1 día")
+        }
+        return this
+    }
+
     fun isValid(): Boolean {
         return !this.invalid
     }

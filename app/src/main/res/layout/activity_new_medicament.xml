@@ -48,7 +48,7 @@
             </com.google.android.material.textfield.TextInputLayout>
             
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/activity_new_med_start"
+                android:id="@+id/activity_new_med_til_start_time"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="8pt">
@@ -62,7 +62,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/activity_new_med_days"
+                android:id="@+id/activity_new_med_til_days"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="8pt">
@@ -76,7 +76,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/activity_new_med_repeat_qty"
+                android:id="@+id/activity_new_med_til_repeat_qty"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="8pt">
@@ -90,7 +90,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/activity_new_med_repeat_unit"
+                android:id="@+id/activity_new_med_til_repeat_unit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="8pt">
@@ -104,7 +104,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/activity_new_med_note"
+                android:id="@+id/activity_new_med_til_note"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="8pt">
