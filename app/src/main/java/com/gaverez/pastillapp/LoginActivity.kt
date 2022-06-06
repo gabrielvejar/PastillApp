@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import com.gaverez.pastillapp.utils.TilValidator
+import com.google.android.material.textfield.TextInputLayout
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,14 +15,33 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val btnToLogin = findViewById<Button>(R.id.activity_login_btn_login)
+        val tvToRegister = findViewById<TextView>(R.id.activity_login_tv_register)
+        val tilEmail = findViewById<TextInputLayout>(R.id.activity_login_til_email)
+        val tilPassword = findViewById<TextInputLayout>(R.id.activity_login_til_password)
+
         btnToLogin.setOnClickListener{
-            val intent = Intent(this, ListActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(intent)
-            finish()
+            //val email = tilEmail.editText?.text
+            //val password = tilPassword.editText?.text
+
+            val emailValid = TilValidator(tilEmail)
+                .required()
+                .email()
+                .isValid()
+
+            val passwordValid = TilValidator(tilPassword)
+                .required()
+                .isValid()
+
+            if (emailValid && passwordValid) {
+                val intent = Intent(this, ListActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Revise datos ingresados", Toast.LENGTH_SHORT).show()
+            }
         }
 
-        val tvToRegister = findViewById<TextView>(R.id.activity_login_tv_register)
         tvToRegister.setOnClickListener{
             //Toast.makeText(this, "Registrar", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, RegisterActivity::class.java)
