@@ -30,7 +30,6 @@ class LoginActivity : AppCompatActivity() {
 
             val passwordValid = TilValidator(tilPassword)
                 .required()
-                .minLength(8)
                 .isValid()
 
             if (emailValid && passwordValid) {
