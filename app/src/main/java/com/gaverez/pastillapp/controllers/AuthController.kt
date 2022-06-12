@@ -21,7 +21,7 @@ class AuthController constructor(ctx: Context) {
         }
     }
 
-    fun register(firstname: String, lastname: String, email: String, password: String) {
+    fun register(firstname: String, lastname: String, email: String, password: String, birth: String) {
         Toast.makeText(this.ctx, "Cuenta registrada", Toast.LENGTH_SHORT).show()
         val intent = Intent(this.ctx, LoginActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP

@@ -18,35 +18,39 @@ class NewMedicamentActivity : AppCompatActivity() {
         val btnToSaveNewMed = findViewById<Button>(R.id.activity_new_med_btn_save)
 
         val tilName = findViewById<TextInputLayout>(R.id.activity_new_med_til_name)
-        val tilStartTime = findViewById<TextInputLayout>(R.id.activity_new_med_til_start_time)
+        val spnStartTime = findViewById<Spinner>(R.id.activity_new_med_spn_start_time)
         val tilDays = findViewById<TextInputLayout>(R.id.activity_new_med_til_days)
         val tilRepeatQty = findViewById<TextInputLayout>(R.id.activity_new_med_til_repeat_qty)
+        val spnRepeatUnit = findViewById<Spinner>(R.id.activity_new_med_spn_repeat_unit)
         val tilNote = findViewById<TextInputLayout>(R.id.activity_new_med_til_note)
 
-        val spnRepeatUnit = findViewById<Spinner>(R.id.activity_new_med_spn_repeat_unit)
+        //populate Start Time spinner
+        val startTimeSpinnerAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.hours,
+            android.R.layout.simple_spinner_item
+        )
+        startTimeSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spnStartTime.adapter = startTimeSpinnerAdapter
+
         //populate Repeat Unit spinner
-        val spinnerAdapter = ArrayAdapter.createFromResource(
+        val repeatUnitSpinnerAdapter = ArrayAdapter.createFromResource(
             this,
             R.array.repeat_units,
             android.R.layout.simple_spinner_item
         )
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spnRepeatUnit.adapter = spinnerAdapter
+        repeatUnitSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spnRepeatUnit.adapter = repeatUnitSpinnerAdapter
 
         btnToSaveNewMed.setOnClickListener{
             val name = tilName.editText?.text.toString()
-            val startTime = tilStartTime.editText?.text.toString()
+            val startTime = spnStartTime.selectedItem.toString()
             val days = tilDays.editText?.text.toString()
             val repeatQty = tilRepeatQty.editText?.text.toString()
-            val spnRepeatUnitValue = spnRepeatUnit.selectedItem.toString()
+            val repeatUnit = spnRepeatUnit.selectedItem.toString()
 
             val nameValid = TilValidator(tilName)
                 .required()
-                .isValid()
-
-            val startTimeValid = TilValidator(tilStartTime)
-                .required()
-                .time()
                 .isValid()
 
             val daysValid = TilValidator(tilDays)
@@ -58,14 +62,14 @@ class NewMedicamentActivity : AppCompatActivity() {
                 .required()
                 .isValid()
 
-            if (nameValid && startTimeValid && daysValid && rptQtyValid) {
-                Toast.makeText(this, spnRepeatUnitValue, Toast.LENGTH_SHORT).show()
+            if (nameValid && daysValid && rptQtyValid) {
+                Toast.makeText(this, "Hora inicio: $startTime, Unidad tiempo: $repeatUnit", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, ListActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(intent)
                 finish()
             } else {
-                //Toast.makeText(this, "Revise datos ingresados", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Revise datos ingresados", Toast.LENGTH_SHORT).show()
             }
         }
     }
