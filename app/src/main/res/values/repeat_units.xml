@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="repeat_units">
+        <item>minutos</item>
+        <item>horas</item>
+        <item>días</item>
+        <item>semanas</item>
+        <item>meses</item>
+    </string-array>
+</resources>

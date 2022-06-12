@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.gaverez.pastillapp.controllers.AuthController
 import com.gaverez.pastillapp.utils.TilValidator
 import com.google.android.material.textfield.TextInputLayout
 
@@ -20,8 +21,6 @@ class LoginActivity : AppCompatActivity() {
         val tilPassword = findViewById<TextInputLayout>(R.id.activity_login_til_password)
 
         btnToLogin.setOnClickListener{
-            //val email = tilEmail.editText?.text
-            //val password = tilPassword.editText?.text
 
             val emailValid = TilValidator(tilEmail)
                 .required()
@@ -32,18 +31,16 @@ class LoginActivity : AppCompatActivity() {
                 .required()
                 .isValid()
 
-            if (emailValid && passwordValid) {
-                val intent = Intent(this, ListActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                startActivity(intent)
-                finish()
+            if (true || emailValid && passwordValid) {
+                val email = tilEmail.editText?.text.toString()
+                val password = tilPassword.editText?.text.toString()
+                AuthController(this).login(email, password)
             } else {
                 Toast.makeText(this, "Revise datos ingresados", Toast.LENGTH_SHORT).show()
             }
         }
 
         tvToRegister.setOnClickListener{
-            //Toast.makeText(this, "Registrar", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, RegisterActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)

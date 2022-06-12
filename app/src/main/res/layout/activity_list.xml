@@ -37,8 +37,8 @@
                 android:id="@+id/activity_list_btn_add_med"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Añadir nuevo medicamento"
-                android:layout_marginBottom="16pt"/>
+                android:layout_marginBottom="16pt"
+                android:text="Añadir nuevo medicamento" />
 
             <Button
                 android:id="@+id/activity_list_btn_med1"
@@ -46,17 +46,10 @@
                 android:layout_height="wrap_content"
                 android:text="Amoxicilina" />
 
-            <Button
-                android:id="@+id/activity_list_btn_med2"
+            <ListView
+                android:id="@+id/activity_list_lv_medicaments"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="EcalD" />
-
-            <Button
-                android:id="@+id/activity_list_btn_med3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Paracetamol" />
+                android:layout_height="176dp" />
 
         </LinearLayout>
     </ScrollView>
