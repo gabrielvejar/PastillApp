@@ -89,7 +89,7 @@ class MedicamentEditActivity : AppCompatActivity() {
 
             if (nameValid && daysValid && rptQtyValid) {
                 Toast.makeText(this, "Inicio: $startDate a las $startTime. Repeticiones: $repeatQty $repeatUnit", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, MedicamentDetailsActivity::class.java)
+                val intent = Intent(this, ListActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(intent)
                 finish()
