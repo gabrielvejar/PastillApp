@@ -8,7 +8,9 @@ import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
 import com.gaverez.pastillapp.utils.TilValidator
+import com.gaverez.pastillapp.utils.showDatePickerDialog
 import com.google.android.material.textfield.TextInputLayout
+import java.util.*
 
 class NewMedicamentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +25,11 @@ class NewMedicamentActivity : AppCompatActivity() {
         val tilRepeatQty = findViewById<TextInputLayout>(R.id.activity_new_med_til_repeat_qty)
         val spnRepeatUnit = findViewById<Spinner>(R.id.activity_new_med_spn_repeat_unit)
         val tilNote = findViewById<TextInputLayout>(R.id.activity_new_med_til_note)
+        val tilStartDate = findViewById<TextInputLayout>(R.id.activity_new_med_til_start_date)
+
+        tilStartDate.editText?.setOnClickListener { _ ->
+            showDatePickerDialog(this, tilStartDate, Date())
+        }
 
         //populate Start Time spinner
         val startTimeSpinnerAdapter = ArrayAdapter.createFromResource(
@@ -36,7 +43,7 @@ class NewMedicamentActivity : AppCompatActivity() {
         //populate Repeat Unit spinner
         val repeatUnitSpinnerAdapter = ArrayAdapter.createFromResource(
             this,
-            R.array.repeat_units,
+            R.array.time_units,
             android.R.layout.simple_spinner_item
         )
         repeatUnitSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -44,6 +51,7 @@ class NewMedicamentActivity : AppCompatActivity() {
 
         btnToSaveNewMed.setOnClickListener{
             val name = tilName.editText?.text.toString()
+            val startDate = tilStartDate.editText?.text.toString()
             val startTime = spnStartTime.selectedItem.toString()
             val days = tilDays.editText?.text.toString()
             val repeatQty = tilRepeatQty.editText?.text.toString()
@@ -63,7 +71,7 @@ class NewMedicamentActivity : AppCompatActivity() {
                 .isValid()
 
             if (nameValid && daysValid && rptQtyValid) {
-                Toast.makeText(this, "Hora inicio: $startTime, Unidad tiempo: $repeatUnit", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Inicio: $startDate a las $startTime. Repeticiones: $repeatQty $repeatUnit", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, ListActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(intent)

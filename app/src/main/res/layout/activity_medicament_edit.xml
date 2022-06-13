@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="16pt"
-            android:paddingTop="32pt"
+            android:paddingTop="8pt"
             android:paddingRight="16pt"
             android:paddingBottom="32pt">
 
@@ -43,16 +43,51 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre"
+                    android:hint="Nombre de medicamento"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Spinner
-                android:id="@+id/activity_edit_spn_start_time"
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="8pt" />
+                android:layout_height="wrap_content"
+                android:text="Inicio de tratamiento" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/activity_edit_til_start_date"
+                    android:layout_width="205dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8pt"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="159dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Fecha"
+                        android:inputType="text"
+                        android:focusable="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#E4E4E4"
+                    android:layout_marginBottom="8pt"
+                    android:layout_toRightOf="@id/activity_edit_til_start_date">
+
+                    <Spinner
+                        android:id="@+id/activity_edit_spn_start_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/activity_edit_til_days"
@@ -63,30 +98,47 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Días"
+                    android:hint="Días de tratamiento"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/activity_edit_til_repeat_qty"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="8pt">
 
-                <com.google.android.material.textfield.TextInputEditText
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/activity_edit_til_repeat_qty"
+                    android:layout_width="205dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8pt"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="159dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Repetir cada"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Repetir cada"
-                    android:inputType="text" />
+                    android:background="#E4E4E4"
+                    android:layout_marginBottom="8pt"
+                    android:layout_toRightOf="@id/activity_edit_til_repeat_qty">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <Spinner
+                        android:id="@+id/activity_edit_spn_repeat_unit"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp" />
+                </RelativeLayout>
 
-            <Spinner
-                android:id="@+id/activity_edit_spn_repeat_unit"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="8pt" />
+            </RelativeLayout>
+
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/activity_edit_til_note"

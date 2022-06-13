@@ -10,7 +10,9 @@
         <entry key="..\:/Users/gveja/AndroidStudioProjects/PastillApp/app/src/main/res/layout/activity_medicament_edit.xml" value="0.25" />
         <entry key="..\:/Users/gveja/AndroidStudioProjects/PastillApp/app/src/main/res/layout/activity_new_medicament.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/gveja/AndroidStudioProjects/PastillApp/app/src/main/res/layout/activity_register.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_list.xml" value="0.20878623188405798" />
+        <entry key="app/src/main/res/layout/activity_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/activity_medicament_details.xml" value="0.21829710144927536" />
         <entry key="app/src/main/res/layout/activity_medicament_edit.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_new_medicament.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.20878623188405798" />

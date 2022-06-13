@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
                 .required()
                 .isValid()
 
-            if (true || emailValid && passwordValid) {
+            if (emailValid && passwordValid) {
                 val email = tilEmail.editText?.text.toString()
                 val password = tilPassword.editText?.text.toString()
                 AuthController(this).login(email, password)

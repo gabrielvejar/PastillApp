@@ -11,12 +11,15 @@ class MedicamentController constructor(ctx: Context){
         for (i in 1..10) {
             medicaments.add(
                 Medicament(
-                name =  "Medicamento $i",
-                dateStart = "2022/06/11",
-                timeStart = "22:00",
-                repeatQty = 5,
-                repeatUnit = "day",
-            )
+                    id = i.toLong(),
+                    name =  "Medicamento $i",
+                    dateStart = "2022/06/1${i-1}",
+                    timeStart = "1${i-1}:00",
+                    days = i,
+                    repeatQty = i+2,
+                    repeatUnit = "días",
+                    note = "Antibiotico para la infección del oído."
+                )
             )
         }
         return medicaments

@@ -6,52 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".ListActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical"
+        android:paddingLeft="16pt"
+        android:paddingTop="8pt"
+        android:paddingRight="16pt"
+        android:paddingBottom="8pt">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/activity_list_tv_title_meds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="16pt"
-            android:paddingTop="32pt"
-            android:paddingRight="16pt"
-            android:paddingBottom="32pt">
+            android:layout_marginBottom="8pt"
+            android:text="Medicamentos"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="16pt" />
 
-            <TextView
-                android:id="@+id/activity_list_tv_title_meds"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16pt"
-                android:text="Medicamentos"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textSize="16pt" />
+        <Button
+            android:id="@+id/activity_list_btn_add_med"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8pt"
+            android:text="Añadir nuevo medicamento" />
 
-            <Button
-                android:id="@+id/activity_list_btn_add_med"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16pt"
-                android:text="Añadir nuevo medicamento" />
+        <ListView
+            android:id="@+id/activity_list_lv_medicaments"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-            <Button
-                android:id="@+id/activity_list_btn_med1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Amoxicilina" />
-
-            <ListView
-                android:id="@+id/activity_list_lv_medicaments"
-                android:layout_width="match_parent"
-                android:layout_height="176dp" />
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

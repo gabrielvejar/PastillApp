@@ -28,10 +28,13 @@ class ListActivity : AppCompatActivity() {
 
         lvMedicaments.adapter = adapter
 
-        val btnToViewMedDetails = findViewById<Button>(R.id.activity_list_btn_med1)
-        btnToViewMedDetails.setOnClickListener{
-            val intent = Intent(this, MedicamentDetailsActivity::class.java)
-            startActivity(intent)
+        lvMedicaments.setOnItemClickListener { adapterView, view, i, l ->
+            run {
+                val medicament = allMedicaments[i]
+                val intent = Intent(view.context, MedicamentDetailsActivity::class.java)
+                intent.putExtra("medicament", medicament)
+                view.context.startActivity(intent)
+            }
         }
 
     }

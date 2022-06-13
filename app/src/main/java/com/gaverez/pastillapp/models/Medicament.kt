@@ -8,6 +8,7 @@ data class Medicament(
     val name: String,
     val dateStart: String,
     val timeStart: String,
+    val days: Int,
     val repeatQty: Int,
     val repeatUnit: String,
     val note: String? = null,
