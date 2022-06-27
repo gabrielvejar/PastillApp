@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.room.Room
 import com.gaverez.pastillapp.ListActivity
 import com.gaverez.pastillapp.LoginActivity
+import com.gaverez.pastillapp.MainActivity
 import com.gaverez.pastillapp.lib.AppDatabase
 import com.gaverez.pastillapp.models.User
 import com.gaverez.pastillapp.models.UserEntity
@@ -82,8 +83,8 @@ class AuthController constructor(ctx: Context) {
         Handler().postDelayed({
             //Validar user id
             if (id == (-1).toLong()) {
-                //Si no existe redirecciona al login
-                val intent = Intent(this.ctx, LoginActivity::class.java)
+                //Si no existe redirecciona a la pantalla de bienvenida (login y registro)
+                val intent = Intent(this.ctx, MainActivity::class.java)
                 this.ctx.startActivity(intent)
             } else {
                 //Si exite redirecciona al listado de medicamentos (main)
@@ -101,7 +102,7 @@ class AuthController constructor(ctx: Context) {
         editor.remove("user_id")
         editor.commit()
         //Redirecciona al login
-        val intent = Intent(this.ctx, LoginActivity::class.java)
+        val intent = Intent(this.ctx, MainActivity::class.java)
         this.ctx.startActivity(intent)
         (this.ctx as Activity).finish()
     }
