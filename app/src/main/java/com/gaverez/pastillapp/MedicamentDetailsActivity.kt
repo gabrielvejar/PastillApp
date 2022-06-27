@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.gaverez.pastillapp.controllers.MedicamentController
 import com.gaverez.pastillapp.models.Medicament
 
 class MedicamentDetailsActivity : AppCompatActivity() {
@@ -21,7 +22,7 @@ class MedicamentDetailsActivity : AppCompatActivity() {
 
         tvName.text = medicament.name
         tvStart.text = "${medicament.dateStart} a las ${medicament.timeStart}"
-        tvRepeats.text = "${medicament.repeatQty} ${medicament.repeatUnit}"
+        tvRepeats.text = "${medicament.repeatQty} ${medicament.repeatUnit} por ${medicament.days} día(s)"
         tvNote.text = medicament.note
 
         val btnToEditMedDetails = findViewById<Button>(R.id.activity_details_btn_edit)
@@ -33,10 +34,7 @@ class MedicamentDetailsActivity : AppCompatActivity() {
 
         val btnToDeleteMed = findViewById<Button>(R.id.activity_details_btn_delete)
         btnToDeleteMed.setOnClickListener{
-            val intent = Intent(this, ListActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(intent)
-            finish()
+            MedicamentController(this).delete(medicament.id!!)
         }
 
     }
