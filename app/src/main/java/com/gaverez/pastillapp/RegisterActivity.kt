@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import com.gaverez.pastillapp.controllers.AuthController
+import com.gaverez.pastillapp.models.User
 import com.gaverez.pastillapp.utils.TilValidator
 import com.gaverez.pastillapp.utils.showDatePickerDialog
 import com.google.android.material.textfield.TextInputLayout
+import java.text.SimpleDateFormat
 import java.util.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -54,12 +56,19 @@ class RegisterActivity : AppCompatActivity() {
             if (firstNameValid && lastNameValid && emailValid && passwordValid) {
                 val email = tilEmail.editText?.text.toString()
                 val password = tilPassword.editText?.text.toString()
-                val firstName = tilFirstName.editText?.text.toString()
-                val lastName = tilLastName.editText?.text.toString()
+                val firstname = tilFirstName.editText?.text.toString()
+                val lastname = tilLastName.editText?.text.toString()
                 val birth = tilBirth.editText?.text.toString()
 
-                AuthController(this).register(firstName, lastName, email, password, birth)
-                Toast.makeText(this, "Fecha de nacimiento: $birth", Toast.LENGTH_SHORT).show()
+                val user = User(
+                    id = null,
+                    firstname = firstname,
+                    lastname = lastname,
+                    email = email,
+                    password = password,
+                    birth = SimpleDateFormat("yyyy-MM-dd").parse(birth)
+                )
+                AuthController(this).register(user)
             } else {
                 Toast.makeText(this, "Revise datos ingresados", Toast.LENGTH_SHORT).show()
             }

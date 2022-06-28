@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import com.gaverez.pastillapp.controllers.MedicamentController
 import com.gaverez.pastillapp.models.Medicament
 import com.gaverez.pastillapp.utils.TilValidator
 import com.gaverez.pastillapp.utils.showDatePickerDialog
@@ -73,8 +74,13 @@ class MedicamentEditActivity : AppCompatActivity() {
             val days = tilDays.editText?.text.toString()
             val repeatQty = tilRepeatQty.editText?.text.toString()
             val repeatUnit = spnRepeatUnit.selectedItem.toString()
+            val note = tilNote.editText?.text.toString()
 
             val nameValid = TilValidator(tilName)
+                .required()
+                .isValid()
+
+            val startDateValid = TilValidator(tilStartDate)
                 .required()
                 .isValid()
 
@@ -87,12 +93,21 @@ class MedicamentEditActivity : AppCompatActivity() {
                 .required()
                 .isValid()
 
-            if (nameValid && daysValid && rptQtyValid) {
-                Toast.makeText(this, "Inicio: $startDate a las $startTime. Repeticiones: $repeatQty $repeatUnit", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, ListActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                startActivity(intent)
-                finish()
+            if (nameValid && startDateValid && daysValid && rptQtyValid) {
+
+                val medicament = Medicament(
+                    id = medicament.id,
+                    active = true,
+                    name = name,
+                    dateStart = startDate,
+                    timeStart = startTime,
+                    days = Integer.parseInt(days.trim()),
+                    repeatQty = Integer.parseInt(repeatQty.trim()),
+                    repeatUnit = repeatUnit,
+                    note = note,
+                )
+
+                MedicamentController(this).update(medicament)
             } else {
                 Toast.makeText(this, "Revise datos ingresados", Toast.LENGTH_SHORT).show()
             }
